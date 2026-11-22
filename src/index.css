@@ -1,0 +1,277 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Self-hosted typography (zero external font CDN dependencies)
+   Variable woff2 subsets with full Latin + Romanian diacritics
+   ============================================================ */
+
+@font-face {
+  font-family: "STIX Two Text";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("./assets/fonts/stix-two-text-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "STIX Two Text";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("./assets/fonts/stix-two-text-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("./assets/fonts/onest-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("./assets/fonts/onest-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("./assets/fonts/jetbrains-mono-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("./assets/fonts/jetbrains-mono-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* ============================================================
+   Saffron & Fig Lacquer — Semantic Design Tokens
+   ============================================================ */
+
+:root {
+  --surface-lacquer: #260811;
+  --surface-lacquer-elevated: #320b17;
+  --surface-lacquer-deep: #19050b;
+  --surface-chalk: #f5f1e7;
+  --surface-chalk-warm: #ebe4d5;
+  --surface-chalk-card: #faf7f1;
+
+  --ink-on-lacquer: #f5f1e7;
+  --ink-on-lacquer-muted: #d6c3c8;
+  --ink-on-lacquer-subtle: #b89ea5;
+
+  --ink-on-chalk: #17070d;
+  --ink-on-chalk-muted: #4f383f;
+  --ink-on-chalk-subtle: #664d54;
+
+  --accent-saffron: #e5a91c;
+  --accent-saffron-hover: #f2ba30;
+  --accent-saffron-ink: #1a060b;
+
+  --accent-jade: #22593b;
+  --accent-jade-light: #e4f0e8;
+  --accent-jade-on-lacquer: #2b6e49;
+
+  --accent-danger: #a8202c;
+  --accent-danger-soft: #fae9eb;
+
+  --hairline-lacquer: rgba(245, 241, 231, 0.16);
+  --hairline-lacquer-strong: rgba(245, 241, 231, 0.28);
+  --hairline-chalk: rgba(23, 7, 13, 0.14);
+  --hairline-chalk-strong: rgba(23, 7, 13, 0.28);
+
+  --font-display: "STIX Two Text", Georgia, "Times New Roman", serif;
+  --font-sans: "Onest", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --ease-expo-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --radius-sharp: 3px;
+  --radius-control: 5px;
+}
+
+/* ============================================================
+   Base & Browser Surface Integration
+   ============================================================ */
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--surface-lacquer);
+  color: var(--ink-on-chalk);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background-color: var(--surface-lacquer);
+  color: var(--ink-on-chalk);
+  overflow-x: clip;
+  caret-color: var(--accent-saffron);
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+::selection {
+  background-color: var(--accent-saffron);
+  color: var(--accent-saffron-ink);
+}
+
+/* Custom scrollbar matching lacquer & saffron palette */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-lacquer-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #532030;
+  border: 2px solid var(--surface-lacquer-deep);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-saffron);
+}
+
+/* Accessible visible keyboard focus */
+:focus-visible {
+  outline: 2px solid var(--accent-saffron);
+  outline-offset: 3px;
+}
+
+a {
+  text-underline-offset: 0.28em;
+}
+
+/* Typography helpers */
+.font-display {
+  font-family: var(--font-display);
+  text-wrap: balance;
+}
+
+.font-mono-tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Subtle architectural tactile lacquer finish (deep velvet oxblood #260811) */
+.lacquer-surface {
+  background-color: var(--surface-lacquer);
+  background-image: radial-gradient(
+      95% 80% at 88% 4%,
+      rgba(66, 16, 32, 0.24) 0%,
+      rgba(38, 8, 17, 0) 62%
+    ),
+    linear-gradient(180deg, rgba(255, 248, 235, 0.012) 0%, rgba(0, 0, 0, 0.14) 100%);
+  color: var(--ink-on-lacquer);
+}
+
+.chalk-surface {
+  background-color: var(--surface-chalk);
+  color: var(--ink-on-chalk);
+}
+
+/* Signature kinetic saffron elbow pathline */
+.saffron-elbow-line {
+  position: relative;
+}
+
+@keyframes elbowDraw {
+  from {
+    stroke-dashoffset: 240;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.elbow-path-animate {
+  stroke-dasharray: 240;
+  stroke-dashoffset: 0;
+  animation: elbowDraw 0.9s var(--ease-expo-out) 0.15s both;
+}
+
+/* Subtle image hover reveal */
+.dish-photo-zoom {
+  transition: transform 0.65s var(--ease-expo-out);
+}
+
+.group:hover .dish-photo-zoom,
+.group:focus-within .dish-photo-zoom {
+  transform: scale(1.045);
+}
+
+/* Skip link for keyboard navigation */
+.skip-link {
+  position: absolute;
+  top: -120px;
+  left: 16px;
+  z-index: 100;
+  background: var(--accent-saffron);
+  color: var(--accent-saffron-ink);
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: var(--radius-control);
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
+/* Reduced motion compliance */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

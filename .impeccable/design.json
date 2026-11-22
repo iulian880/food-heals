@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-22T18:10:00Z",
+  "title": "Design System: food-heals",
+  "extensions": {
+    "colorMeta": {
+      "lacquer-ground": {
+        "role": "primary",
+        "displayName": "Deep Fig-Oxblood Lacquer",
+        "canonical": "#260811",
+        "tonalRamp": ["#120308", "#19050b", "#260811", "#320b17", "#4a1426", "#742840", "#b87c8d", "#f5e8ec"]
+      },
+      "saffron-gold": {
+        "role": "primary",
+        "displayName": "Embossed Saffron Gold",
+        "canonical": "#e5a91c",
+        "tonalRamp": ["#2e2003", "#523a07", "#855e0d", "#b88414", "#e5a91c", "#f2ba30", "#f8d474", "#fdf3d7"]
+      },
+      "botanical-jade": {
+        "role": "secondary",
+        "displayName": "Botanical Jade",
+        "canonical": "#22593b",
+        "tonalRamp": ["#0d2417", "#143825", "#1c4a31", "#22593b", "#2f744f", "#539b74", "#9bcab0", "#e4f0e8"]
+      },
+      "chalk-paper": {
+        "role": "neutral",
+        "displayName": "Mineral Chalk Paper",
+        "canonical": "#f5f1e7",
+        "tonalRamp": ["#17070d", "#331e24", "#4f383f", "#735a61", "#a3918e", "#d2c8ba", "#ebe4d5", "#f5f1e7"]
+      },
+      "ink-on-chalk": {
+        "role": "neutral",
+        "displayName": "Charred Plum Ink",
+        "canonical": "#17070d",
+        "tonalRamp": ["#0d0306", "#17070d", "#2c141c", "#4f383f", "#664d54", "#988288", "#d2c5c8", "#f5f1e7"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display Serif", "purpose": "Monumental hero thesis headline." },
+      "headline": { "displayName": "Section Headline", "purpose": "Major band titles on lacquer and mineral chalk." },
+      "title": { "displayName": "Item Title", "purpose": "Dish cards, ritual steps, delivery zones, and subscription plans." },
+      "body": { "displayName": "Editorial Body", "purpose": "Descriptions, culinary notes, and diner stories (54–68ch)." },
+      "label": { "displayName": "Tabular Telemetry", "purpose": "Macros, prices, delivery zone tabs, and kitchen coordinates." }
+    },
+    "shadows": [
+      { "name": "hero-pill", "value": "0 12px 32px rgba(0, 0, 0, 0.45)", "purpose": "Grounds floating signature dish pill over stoneware photography." },
+      { "name": "cta-saffron", "value": "0 6px 22px rgba(229, 169, 28, 0.22)", "purpose": "Warm lift under primary saffron CTA on deep oxblood lacquer." },
+      { "name": "overlay-panel", "value": "0 24px 64px rgba(12, 2, 6, 0.55)", "purpose": "Separates dish specimen modal and slide-over bag drawer." }
+    ],
+    "motion": [
+      { "name": "ease-expo-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Orchestrated GSAP entrance settles, photo hover reveal, and elbow stroke draw." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Saffron Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary conversion CTA on deep fig-oxblood lacquer surfaces.",
+      "html": "<button class=\"ds-btn-primary\">Order Today's Menu</button>",
+      "css": ".ds-btn-primary { background: var(--accent-saffron, #e5a91c); color: var(--accent-saffron-ink, #1a060b); font-family: 'Onest', sans-serif; font-weight: 600; font-size: 15px; padding: 14px 24px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 6px 22px rgba(229, 169, 28, 0.22); transition: background-color 180ms ease; } .ds-btn-primary:hover { background: var(--accent-saffron-hover, #f2ba30); } .ds-btn-primary:focus-visible { outline: 2px solid #e5a91c; outline-offset: 3px; }"
+    },
+    {
+      "name": "Secondary Lacquer Outline Button",
+      "kind": "button",
+      "refersTo": "button-secondary-lacquer",
+      "description": "Hairline-framed secondary action paired beside the primary saffron CTA.",
+      "html": "<button class=\"ds-btn-outline\">Explore Plans</button>",
+      "css": ".ds-btn-outline { background: transparent; color: #f5f1e7; font-family: 'Onest', sans-serif; font-weight: 500; font-size: 15px; padding: 14px 24px; border: 1px solid rgba(245, 241, 231, 0.28); border-radius: 5px; cursor: pointer; transition: border-color 180ms ease, color 180ms ease; } .ds-btn-outline:hover { border-color: #e5a91c; color: #e5a91c; } .ds-btn-outline:focus-visible { outline: 2px solid #e5a91c; outline-offset: 3px; }"
+    },
+    {
+      "name": "Illuminated 5-Zone Tab Bar",
+      "kind": "nav",
+      "refersTo": "button-secondary-lacquer",
+      "description": "Architectural delivery-zone bar for Timișoara, Giroc, Dumbrăvița, Moșnița, and Ghiroda.",
+      "html": "<div class=\"ds-zone-bar\" role=\"tablist\"><button class=\"ds-zone-tab ds-zone-tab--active\" role=\"tab\" aria-selected=\"true\">TIMIȘOARA</button><button class=\"ds-zone-tab\" role=\"tab\" aria-selected=\"false\">GIROC</button><button class=\"ds-zone-tab\" role=\"tab\" aria-selected=\"false\">DUMBRĂVIȚA</button><button class=\"ds-zone-tab\" role=\"tab\" aria-selected=\"false\">MOȘNIȚA</button><button class=\"ds-zone-tab\" role=\"tab\" aria-selected=\"false\">GHIRODA</button></div>",
+      "css": ".ds-zone-bar { display: grid; grid-template-columns: repeat(5, 1fr); background: #260811; border-top: 1px solid rgba(245,241,231,0.16); border-bottom: 1px solid rgba(245,241,231,0.16); } .ds-zone-tab { position: relative; background: transparent; border: none; border-right: 1px solid rgba(245,241,231,0.16); padding: 12px 6px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.05em; color: #d6c3c8; cursor: pointer; transition: color 160ms ease, background-color 160ms ease; } .ds-zone-tab:last-child { border-right: none; } .ds-zone-tab:hover { color: #f5f1e7; background: rgba(255,255,255,0.02); } .ds-zone-tab--active { color: #e5a91c; font-weight: 600; background: rgba(255,255,255,0.035); } .ds-zone-tab--active::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2.5px; background: #e5a91c; }"
+    },
+    {
+      "name": "Dish Specimen Card",
+      "kind": "card",
+      "refersTo": "card-specimen",
+      "description": "Hairline-bordered mineral-chalk menu specimen with tabular macro ledger and jade add button.",
+      "html": "<article class=\"ds-specimen\"><div class=\"ds-specimen-head\"><h3>Hokkaido Pumpkin Velouté</h3><span class=\"ds-specimen-price\">€11.50</span></div><p class=\"ds-specimen-sub\">Fire-roasted organic squash, toasted Banat pepitas &amp; ginger</p><div class=\"ds-specimen-macros\"><span><strong>16g</strong> Protein</span><span><strong>360</strong> kcal</span><span><strong>14m</strong> prep</span></div><div class=\"ds-specimen-foot\"><button class=\"ds-specimen-link\">Details</button><button class=\"ds-specimen-add\">+ Order</button></div></article>",
+      "css": ".ds-specimen { background: #faf7f1; color: #17070d; border: 1px solid rgba(23,7,13,0.14); border-radius: 3px; padding: 16px; max-width: 310px; font-family: 'Onest', sans-serif; } .ds-specimen-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; } .ds-specimen-head h3 { margin: 0; font-family: 'STIX Two Text', Georgia, serif; font-size: 19px; line-height: 1.2; font-weight: 600; } .ds-specimen-price { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; } .ds-specimen-sub { margin: 6px 0 14px; font-size: 13px; line-height: 1.5; color: #4f383f; } .ds-specimen-macros { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(23,7,13,0.14); border-bottom: 1px solid rgba(23,7,13,0.14); padding: 8px 0; text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #664d54; font-variant-numeric: tabular-nums; } .ds-specimen-macros strong { display: block; color: #17070d; } .ds-specimen-foot { margin-top: 12px; display: flex; justify-content: space-between; align-items: center; } .ds-specimen-link { background: none; border: none; color: #4f383f; font-size: 12px; text-decoration: underline; text-underline-offset: 4px; cursor: pointer; } .ds-specimen-add { background: #22593b; color: #f5f1e7; border: none; border-radius: 3px; padding: 8px 14px; font-size: 12px; font-weight: 600; cursor: pointer; transition: background-color 160ms ease; } .ds-specimen-add:hover { background: #1b492f; }"
+    },
+    {
+      "name": "Bilingual Language Switcher",
+      "kind": "chip",
+      "refersTo": "button-primary",
+      "description": "Co-equal EN / RO toggle pill on deep oxblood lacquer surfaces.",
+      "html": "<div class=\"ds-lang\" role=\"group\"><button class=\"ds-lang-btn ds-lang-btn--active\">EN</button><button class=\"ds-lang-btn\">RO</button></div>",
+      "css": ".ds-lang { display: inline-flex; align-items: center; background: #260811; border: 1px solid rgba(245,241,231,0.28); border-radius: 9999px; padding: 3px; font-family: 'JetBrains Mono', monospace; font-size: 12px; } .ds-lang-btn { border: none; background: transparent; color: #d6c3c8; padding: 4px 10px; border-radius: 9999px; cursor: pointer; transition: background-color 150ms ease, color 150ms ease; } .ds-lang-btn--active { background: #e5a91c; color: #1a060b; font-weight: 600; }"
+    },
+    {
+      "name": "Concierge Text Input",
+      "kind": "input",
+      "refersTo": "input-concierge",
+      "description": "Sharp mineral-chalk form field with lacquer border focus and accessible saffron focus ring.",
+      "html": "<input class=\"ds-input\" type=\"email\" placeholder=\"elena@company.ro\" />",
+      "css": ".ds-input { width: 100%; max-width: 320px; background: #ffffff; color: #17070d; border: 1px solid rgba(23,7,13,0.28); border-radius: 3px; padding: 10px 14px; font-family: 'Onest', sans-serif; font-size: 14px; transition: border-color 160ms ease; } .ds-input::placeholder { color: #7c656b; } .ds-input:focus { border-color: #260811; outline: 2px solid #e5a91c; outline-offset: 2px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Saffron & Fig Lacquer Supper-Club Monograph",
+    "overview": "food-heals treats daily organic meal delivery across Timișoara, Giroc, Dumbrăvița, Moșnița, and Ghiroda with the architectural poise of a European lacquer tasting menu and botanical monograph. Rather than competing with discount delivery apps or sterile beige diet boxes, the interface alternates deep velvet fig-oxblood lacquer surfaces with calm mineral-chalk paper bands so mouth-watering culinary photography triggers appetite first while hairline-ruled tabular nutrition data provides instant transparency beside it.\n\nEvery interaction honors co-equal English and Romanian bilingual clarity (EN | RO), full Romanian diacritic rendering (ă, â, î, ș, ț), and calm spatial restraint. Decorative chrome, corner photo stickers, eyebrow kickers, and generic SaaS cards are refused in favor of crisp hairlines, disciplined typography, and direct utility.",
+    "keyCharacteristics": [
+      "Deep velvet fig-oxblood lacquer ground alternating with warm mineral-chalk reading planes.",
+      "Embossed saffron-gold reserved strictly for primary actions, active zone selection, and the kinetic progression hairline.",
+      "Botanical jade reserved exclusively for organic provenance and add-to-bag confirmations.",
+      "Unencumbered dish photography paired with hairline-ruled tabular monospace nutritional ledgers.",
+      "Self-hosted variable fonts (STIX Two Text, Onest, JetBrains Mono) with zero external font dependencies."
+    ],
+    "rules": [
+      {
+        "name": "The Saffron Signal Rule",
+        "body": "Embossed saffron gold (#e5a91c) signals the single active state or primary conversion path on dark lacquer surfaces; never use it for low-contrast small text or decorative icons on mineral chalk.",
+        "section": "colors"
+      },
+      {
+        "name": "The Warm-Tinted Neutral Rule",
+        "body": "Every secondary text color and hairline divider is tinted toward oxblood or chalk rather than pure neutral gray, keeping surfaces cohesive across light and dark bands.",
+        "section": "colors"
+      },
+      {
+        "name": "The Heading-First Rule",
+        "body": "Headings never carry a tracked-uppercase eyebrow or kicker above them. Every card, step, zone plate, and drawer section opens directly on its heading; supporting metadata sits cleanly underneath or inside a hairline footer.",
+        "section": "typography"
+      },
+      {
+        "name": "The Hairline-First Rule",
+        "body": "Separate cards, macro columns, zone rows, and subscription tiers with 1px architectural hairlines rather than drop shadows or nested boxes.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep all dish photography clean and free of overlaid corner pills, sale ribbons, or circular icon stickers.",
+      "Do start every card, ritual step, zone detail, and drawer section directly on its heading without eyebrows or kickers above it.",
+      "Do format every price, macro gram, calorie figure, and delivery minute in JetBrains Mono with font-variant-numeric: tabular-nums.",
+      "Do maintain full English and Romanian (EN | RO) parity across visible text, currency (€ / lei), and accessible aria-label strings.",
+      "Do honor prefers-reduced-motion across all GSAP entrance reveals and elbow transitions."
+    ],
+    "donts": [
+      "Don't place bright saffron gold icons or small saffron text directly on mineral-chalk surfaces where contrast drops below 3:1.",
+      "Don't substitute external Google Fonts CDN links or emoji icons for the self-hosted STIX Two Text / Onest / JetBrains Mono bundle and Phosphor vector icons.",
+      "Don't introduce nested cards, decorative glassmorphism blur panels, gradient text, or generic SaaS checkmark pricing tables.",
+      "Don't fabricate unverified street numbers, third-party certifications, press awards, or live payment guarantees."
+    ]
+  }
+}
