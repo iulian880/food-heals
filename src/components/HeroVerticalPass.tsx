@@ -310,16 +310,16 @@ export function HeroVerticalPass({
             className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#140409]/85 via-[#140409]/35 to-transparent"
           />
 
-          {/* Single-Row Signature Dish Badge + Switcher (never stacks on 390px) */}
-          <div className="absolute bottom-3.5 left-3.5 right-3.5 sm:bottom-6 sm:left-6 sm:right-6 flex items-center justify-between gap-2">
-            <div className="inline-flex items-center gap-2 sm:gap-3 rounded-full bg-[#1a050b]/90 border border-[var(--hairline-lacquer-strong)] px-3 sm:px-3.5 py-1.5 sm:py-2 text-[11px] sm:text-sm text-[var(--ink-on-lacquer)] shadow-[0_12px_32px_rgba(0,0,0,0.45)] min-w-0">
+          {/* Single-Row Signature Dish Badge + Switcher (never stacks or truncates price) */}
+          <div className="absolute bottom-3.5 left-3.5 right-3.5 sm:bottom-5 sm:left-5 sm:right-5 xl:bottom-6 xl:left-6 xl:right-6 flex items-center justify-between gap-2">
+            <div className="inline-flex items-center gap-2 xl:gap-3 rounded-full bg-[#1a050b]/90 border border-[var(--hairline-lacquer-strong)] px-3 xl:px-3.5 py-1.5 sm:py-2 text-[11px] xl:text-sm text-[var(--ink-on-lacquer)] shadow-[0_12px_32px_rgba(0,0,0,0.45)]">
               <button
                 type="button"
                 onClick={() => onInspectDish(activeDish)}
-                className="text-left hover:text-[var(--accent-saffron)] transition-colors cursor-pointer truncate"
+                className="inline-flex items-center whitespace-nowrap text-left hover:text-[var(--accent-saffron)] transition-colors cursor-pointer"
               >
                 <span className="font-medium">{UI_COPY.hero.signatureTag[lang]}</span>
-                <span className="mx-1.5 sm:mx-2 text-[var(--ink-on-lacquer-subtle)]">·</span>
+                <span className="mx-1.5 xl:mx-2 text-[var(--ink-on-lacquer-subtle)]">·</span>
                 <span className="font-mono-tabular font-medium text-[var(--accent-saffron)]">
                   {formatPrice(activeDish.priceEur, activeDish.priceRon, lang)}
                 </span>
@@ -330,7 +330,7 @@ export function HeroVerticalPass({
               <button
                 type="button"
                 onClick={() => handleQuickAdd(activeDish)}
-                className="inline-flex items-center gap-1 font-medium text-[var(--ink-on-lacquer)] hover:text-[var(--accent-saffron)] transition-colors cursor-pointer shrink-0"
+                className="inline-flex items-center gap-1 whitespace-nowrap font-medium text-[var(--ink-on-lacquer)] hover:text-[var(--accent-saffron)] transition-colors cursor-pointer shrink-0"
               >
                 {justAddedId === activeDish.id ? (
                   <>
@@ -346,7 +346,7 @@ export function HeroVerticalPass({
               </button>
             </div>
 
-            <div className="inline-flex items-center gap-0.5 sm:gap-1.5 rounded-full bg-[#1a050b]/88 border border-[var(--hairline-lacquer-strong)] p-0.5 sm:p-1 shrink-0">
+            <div className="inline-flex items-center gap-0.5 sm:gap-1 rounded-full bg-[#1a050b]/88 border border-[var(--hairline-lacquer-strong)] p-0.5 sm:p-1 shrink-0">
               <button
                 type="button"
                 onClick={() => stepHeroDish(-1)}
@@ -371,49 +371,49 @@ export function HeroVerticalPass({
         </div>
 
         {/* RIGHT 54% — Deep Fig-Oxblood Lacquer Supper-Club Pass Panel */}
-        <div className="order-1 lg:order-2 flex flex-col justify-between px-4 sm:px-8 lg:px-10 xl:px-12 pb-7 pt-5 lg:py-0">
+        <div className="order-1 lg:order-2 flex flex-col justify-between px-4 sm:px-8 lg:px-6 xl:px-10 2xl:px-12 pb-7 pt-5 lg:py-0 min-w-0">
           {/* Desktop Integrated Top Nav inside Right Lacquer Panel */}
           <nav
             aria-label={UI_COPY.nav.primaryNavAria[lang]}
-            className="hidden lg:flex items-center justify-between gap-4 py-5 border-b border-[var(--hairline-lacquer)]"
+            className="hidden lg:flex items-center justify-between gap-2.5 xl:gap-4 py-5 border-b border-[var(--hairline-lacquer)] min-w-0"
           >
             <a
               href="#top"
-              className="font-display text-[1.65rem] leading-none font-semibold tracking-tight text-[var(--ink-on-lacquer)] no-underline shrink-0"
+              className="font-display text-[1.35rem] xl:text-[1.6rem] leading-none font-semibold tracking-tight text-[var(--ink-on-lacquer)] no-underline shrink-0 whitespace-nowrap"
             >
               food-heals
             </a>
 
-            <div className="flex items-center gap-5 xl:gap-7 text-sm text-[var(--ink-on-lacquer-muted)]">
+            <div className="flex items-center gap-3.5 xl:gap-6 text-[13px] xl:text-sm text-[var(--ink-on-lacquer-muted)]">
               <a
                 href="#menu"
-                className="hover:text-[var(--ink-on-lacquer)] transition-colors no-underline"
+                className="hover:text-[var(--ink-on-lacquer)] transition-colors no-underline whitespace-nowrap"
               >
                 {UI_COPY.nav.menu[lang]}
               </a>
               <a
                 href="#ritual"
-                className="hover:text-[var(--ink-on-lacquer)] transition-colors no-underline"
+                className="hover:text-[var(--ink-on-lacquer)] transition-colors no-underline whitespace-nowrap"
               >
                 {UI_COPY.nav.ritual[lang]}
               </a>
               <a
                 href="#zones"
-                className="hover:text-[var(--ink-on-lacquer)] transition-colors no-underline"
+                className="hover:text-[var(--ink-on-lacquer)] transition-colors no-underline whitespace-nowrap"
               >
                 {UI_COPY.nav.zones[lang]}
               </a>
               <a
                 href="#plans"
-                className="hover:text-[var(--ink-on-lacquer)] transition-colors no-underline"
+                className="hover:text-[var(--ink-on-lacquer)] transition-colors no-underline whitespace-nowrap"
               >
                 {UI_COPY.nav.plans[lang]}
               </a>
             </div>
 
-            <div className="flex items-center gap-3 shrink-0">
+            <div className="flex items-center gap-2 xl:gap-3 shrink-0">
               <div
-                className="inline-flex items-center rounded-full border border-[var(--hairline-lacquer-strong)] px-1 py-0.5 text-xs font-mono-tabular"
+                className="inline-flex items-center rounded-full border border-[var(--hairline-lacquer-strong)] px-0.5 xl:px-1 py-0.5 text-[11px] xl:text-xs font-mono-tabular"
                 role="group"
                 aria-label={UI_COPY.nav.languageAria[lang]}
               >
@@ -421,7 +421,7 @@ export function HeroVerticalPass({
                   type="button"
                   onClick={() => onChangeLang('en')}
                   aria-pressed={lang === 'en'}
-                  className={`px-2 py-0.5 rounded-full transition-colors cursor-pointer ${
+                  className={`px-1.5 xl:px-2 py-0.5 rounded-full transition-colors cursor-pointer ${
                     lang === 'en'
                       ? 'bg-[var(--accent-saffron)] text-[var(--accent-saffron-ink)] font-semibold'
                       : 'text-[var(--ink-on-lacquer-muted)] hover:text-[var(--ink-on-lacquer)]'
@@ -433,7 +433,7 @@ export function HeroVerticalPass({
                   type="button"
                   onClick={() => onChangeLang('ro')}
                   aria-pressed={lang === 'ro'}
-                  className={`px-2 py-0.5 rounded-full transition-colors cursor-pointer ${
+                  className={`px-1.5 xl:px-2 py-0.5 rounded-full transition-colors cursor-pointer ${
                     lang === 'ro'
                       ? 'bg-[var(--accent-saffron)] text-[var(--accent-saffron-ink)] font-semibold'
                       : 'text-[var(--ink-on-lacquer-muted)] hover:text-[var(--ink-on-lacquer)]'
@@ -446,10 +446,14 @@ export function HeroVerticalPass({
               <button
                 type="button"
                 onClick={onOpenBag}
-                className="inline-flex items-center gap-2 rounded-[var(--radius-control)] border border-[var(--hairline-lacquer-strong)] px-3.5 py-2 text-xs xl:text-sm font-medium text-[var(--ink-on-lacquer)] hover:border-[var(--accent-saffron)] hover:text-[var(--accent-saffron)] transition-colors cursor-pointer tabular-nums"
+                aria-label={bagLabel}
+                className="inline-flex items-center gap-1.5 xl:gap-2 rounded-[var(--radius-control)] border border-[var(--hairline-lacquer-strong)] px-2.5 xl:px-3.5 py-2 text-xs xl:text-[13px] font-medium text-[var(--ink-on-lacquer)] hover:border-[var(--accent-saffron)] hover:text-[var(--accent-saffron)] transition-colors cursor-pointer tabular-nums whitespace-nowrap"
               >
-                <Bag size={16} weight="regular" aria-hidden="true" />
-                <span>{bagLabel}</span>
+                <Bag size={15} weight="regular" aria-hidden="true" />
+                <span className="xl:hidden">
+                  {UI_COPY.nav.bag[lang]} ({bagCount})
+                </span>
+                <span className="hidden xl:inline">{bagLabel}</span>
               </button>
             </div>
           </nav>
@@ -564,12 +568,12 @@ export function HeroVerticalPass({
             </div>
           </div>
 
-          {/* Subtle dish name footer inside right pass on large screens */}
-          <div className="hidden lg:flex items-center justify-between py-3.5 border-t border-[var(--hairline-lacquer)] text-xs text-[var(--ink-on-lacquer-subtle)] font-mono-tabular">
-            <span>
+          {/* Single-line dish & pass footer inside right panel on desktop */}
+          <div className="hidden lg:flex items-center justify-between gap-4 py-3.5 border-t border-[var(--hairline-lacquer)] text-[11px] xl:text-xs text-[var(--ink-on-lacquer-subtle)] font-mono-tabular">
+            <span className="truncate">
               {activeDish.code} — {activeDish.name[lang]}
             </span>
-            <span>{activeZone.hubLabel[lang]}</span>
+            <span className="shrink-0 whitespace-nowrap">{activeZone.hubLabel[lang]}</span>
           </div>
         </div>
       </div>

@@ -71,7 +71,7 @@ export function HarvestMenu({
     <section
       id="menu"
       aria-labelledby="harvest-menu-heading"
-      className="chalk-surface border-b border-[var(--hairline-chalk)]"
+      className="chalk-surface border-b border-[var(--hairline-chalk)] scroll-mt-16"
     >
       <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-10 xl:px-12 pt-10 sm:pt-12 pb-20 sm:pb-24">
         {/* Top Row rising cleanly into the bottom of the first viewport */}

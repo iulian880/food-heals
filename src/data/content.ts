@@ -545,8 +545,8 @@ export const DELIVERY_ZONES: DeliveryZone[] = [
       ro: 'Piața Unirii · Cetate · Iosefin · ISHO · Iulius Town · Elisabetin · Fabric',
     },
     hubLabel: {
-      en: 'Flagship Kitchen Pass · Cetate District, Timișoara',
-      ro: 'Bucătăria Principală · Zona Cetate, Timișoara',
+      en: 'Flagship Pass · Cetate, Timișoara',
+      ro: 'Bucătăria Timișoara · Cetate',
     },
     hours: '08:00 – 22:00',
     image: './assets/zones/timisoara-square.jpg',
@@ -883,7 +883,7 @@ export const UI_COPY = {
   },
   nav: {
     menu: { en: 'Menu', ro: 'Meniu' },
-    ritual: { en: 'Ritual', ro: 'Cum funcționează' },
+    ritual: { en: 'Ritual', ro: 'Ritual' },
     zones: { en: 'Zones', ro: 'Zone' },
     plans: { en: 'Plans', ro: 'Abonamente' },
     concierge: { en: 'Concierge', ro: 'Contact' },
@@ -1095,7 +1095,7 @@ export const UI_COPY = {
     browseMenu: { en: 'Explore Menu', ro: 'Explorează Meniul' },
     selectedPlanLabel: { en: 'Active Plan Selection', ro: 'Abonament Selectat' },
     removePlan: { en: 'Remove plan', ro: 'Elimină planul' },
-    subtotal: { en: 'Dishes subtotal', ro: 'Subtotal preparate' },
+    subtotal: { en: 'Order subtotal', ro: 'Subtotal comandă' },
     delivery: { en: 'Thermal delivery', ro: 'Livrare termo-ceramică' },
     free: { en: 'Free', ro: 'Gratuit' },
     freeThresholdHint: {
@@ -1154,7 +1154,7 @@ export const UI_COPY = {
 
 export function formatPrice(eur: number, ron: number, lang: Lang): string {
   if (lang === 'ro') {
-    return `${ron} lei`;
+    return `${ron.toLocaleString('ro-RO')} lei`;
   }
   return `€${eur.toFixed(2)}`;
 }

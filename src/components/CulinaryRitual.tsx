@@ -13,7 +13,7 @@ export function CulinaryRitual({ lang }: CulinaryRitualProps) {
     <section
       id="ritual"
       aria-labelledby="ritual-heading"
-      className="lacquer-surface border-b border-[var(--hairline-lacquer)]"
+      className="lacquer-surface border-b border-[var(--hairline-lacquer)] scroll-mt-16"
     >
       <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-10 xl:px-12 py-20 sm:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">

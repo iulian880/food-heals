@@ -142,7 +142,7 @@ export function DinerNotesAndConcierge({
       {/* Kitchen Concierge & Validated Contact Form */}
       <div
         id="contact"
-        className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-10 xl:px-12 py-20 sm:py-28"
+        className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-10 xl:px-12 py-20 sm:py-28 scroll-mt-16"
       >
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Concierge Info */}

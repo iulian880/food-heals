@@ -24,7 +24,7 @@ export function DeliveryZones({
     <section
       id="zones"
       aria-labelledby="zones-heading"
-      className="chalk-surface border-b border-[var(--hairline-chalk)]"
+      className="chalk-surface border-b border-[var(--hairline-chalk)] scroll-mt-16"
     >
       <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-10 xl:px-12 py-20 sm:py-28">
         <div className="max-w-[68ch]">

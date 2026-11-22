@@ -29,7 +29,7 @@ export function SubscriptionLedger({
     <section
       id="plans"
       aria-labelledby="plans-heading"
-      className="lacquer-surface border-b border-[var(--hairline-lacquer)]"
+      className="lacquer-surface border-b border-[var(--hairline-lacquer)] scroll-mt-16"
     >
       <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-10 xl:px-12 py-20 sm:py-28">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-10 border-b border-[var(--hairline-lacquer)]">
